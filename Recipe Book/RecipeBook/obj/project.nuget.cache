@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uhDig7s2p//T4OPRd2bttSOIU2XpPQggJH32y4dz6OAQ82mZgonXvFwlb9FpxqcntrjUK3yB16e4/b6YHnsDfg==",
+  "dgSpecHash": "oRxdsmHVu1s4MlXx2ojID7sc/bSJgZZ3KjMuwc0i70JSVcSyacyLlob/lBbg4FOk1BDEpVgL53Pye7RtXvW9jA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\stela\\Desktop\\RecipeBook\\RecipeBook\\Recipe Book.csproj",
+  "projectFilePath": "E:\\3 курс\\6 семестър\\УСП-проект\\Recipe-Book\\Recipe Book\\RecipeBook\\RecipeBook.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\stela\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\stela\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

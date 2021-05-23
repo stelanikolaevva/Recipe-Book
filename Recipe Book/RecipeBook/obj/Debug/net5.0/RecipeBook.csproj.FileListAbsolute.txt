@@ -169,3 +169,14 @@ E:\usp proekt\RecipeBook\RecipeBook\obj\Debug\net5.0\Razor\Views\Ingredients\Del
 E:\usp proekt\RecipeBook\RecipeBook\obj\Debug\net5.0\Razor\Views\Ingredients\Details.cshtml.g.cs
 E:\usp proekt\RecipeBook\RecipeBook\obj\Debug\net5.0\Razor\Views\Ingredients\Edit.cshtml.g.cs
 E:\usp proekt\RecipeBook\RecipeBook\obj\Debug\net5.0\Razor\Views\Ingredients\Index.cshtml.g.cs
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.csprojAssemblyReference.cache
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.GeneratedMSBuildEditorConfig.editorconfig
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.AssemblyInfoInputs.cache
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.AssemblyInfo.cs
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.csproj.CoreCompileInputs.cache
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.MvcApplicationPartsAssemblyInfo.cache
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.RazorAssemblyInfo.cache
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.RazorAssemblyInfo.cs
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.dll
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\ref\RecipeBook.dll
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.pdb
