@@ -20,9 +20,15 @@ namespace RecipeBook.Controllers
         }
 
         // GET: Recipes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchName)
         {
-            return View(await _context.Recipe.ToListAsync());
+            var recipes = from r in _context.Recipe
+                          select r;
+            if (!String.IsNullOrEmpty(searchName))
+            {
+                recipes = recipes.Where(x => x.Name.Contains(searchName));
+            }
+            return View(await recipes.ToListAsync());
         }
 
         // GET: Recipes/Details/5
