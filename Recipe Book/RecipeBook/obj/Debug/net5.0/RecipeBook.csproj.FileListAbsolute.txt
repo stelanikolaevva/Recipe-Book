@@ -465,7 +465,6 @@ E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\Rec
 E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.TagHelpers.output.cache
 E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.RazorCoreGenerate.cache
 E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
