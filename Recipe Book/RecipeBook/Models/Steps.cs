@@ -13,11 +13,12 @@ namespace RecipeBook.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
-        public int Number { get; set; }
+        public string Number { get; set; }
         [Required]
         public string Description { get; set; }
         [Required]
         public string Image { get; set; }
+        public int RecipeId { get; set; }
         public virtual Recipe Recipe { get; set; }
         public Steps()
         {

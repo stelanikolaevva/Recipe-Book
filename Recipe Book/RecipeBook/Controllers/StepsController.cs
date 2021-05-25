@@ -22,7 +22,8 @@ namespace RecipeBook.Controllers
         // GET: Steps
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Steps.ToListAsync());
+            var recipeBookContext = _context.Steps.Include(s => s.Recipe);
+            return View(await recipeBookContext.ToListAsync());
         }
 
         // GET: Steps/Details/5
@@ -34,6 +35,7 @@ namespace RecipeBook.Controllers
             }
 
             var steps = await _context.Steps
+                .Include(s => s.Recipe)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (steps == null)
             {
@@ -46,6 +48,7 @@ namespace RecipeBook.Controllers
         // GET: Steps/Create
         public IActionResult Create()
         {
+            ViewData["RecipeId"] = new SelectList(_context.Recipe, "Id", "Category");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace RecipeBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Number,Description,Image")] Steps steps)
+        public async Task<IActionResult> Create([Bind("Id,Number,Description,Image,RecipeId")] Steps steps)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,7 @@ namespace RecipeBook.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["RecipeId"] = new SelectList(_context.Recipe, "Id", "Category", steps.RecipeId);
             return View(steps);
         }
 
@@ -78,6 +82,7 @@ namespace RecipeBook.Controllers
             {
                 return NotFound();
             }
+            ViewData["RecipeId"] = new SelectList(_context.Recipe, "Id", "Category", steps.RecipeId);
             return View(steps);
         }
 
@@ -86,7 +91,7 @@ namespace RecipeBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Number,Description,Image")] Steps steps)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Number,Description,Image,RecipeId")] Steps steps)
         {
             if (id != steps.Id)
             {
@@ -113,6 +118,7 @@ namespace RecipeBook.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["RecipeId"] = new SelectList(_context.Recipe, "Id", "Category", steps.RecipeId);
             return View(steps);
         }
 
@@ -125,6 +131,7 @@ namespace RecipeBook.Controllers
             }
 
             var steps = await _context.Steps
+                .Include(s => s.Recipe)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (steps == null)
             {

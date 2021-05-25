@@ -34,6 +34,8 @@ namespace RecipeBook.Controllers
             }
 
             var recipe = await _context.Recipe
+                .Include(x=>x.Steps)
+                .Include(x => x.Ingredients)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (recipe == null)
             {
@@ -58,6 +60,7 @@ namespace RecipeBook.Controllers
         {
             if (ModelState.IsValid)
             {
+                recipe.Published = DateTime.Now;
                 _context.Add(recipe);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

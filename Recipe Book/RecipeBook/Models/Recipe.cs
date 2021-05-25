@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace RecipeBook.Models
         [Required]
         public string Description { get; set; }
         [Required]
+        [DisplayName("Cooking time")]
         public string CookingTime { get; set; }
         [Required]
         public int Servings { get; set; }
@@ -28,6 +30,7 @@ namespace RecipeBook.Models
         [Required]
         public DateTime Published { get; set; }
         [Required]
+        [DisplayName("Created by")]
         public string CreatedBy { get; set; }
         public virtual ICollection<Steps> Steps { get; set; }
        
