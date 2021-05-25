@@ -15,7 +15,7 @@ namespace RecipeBook.Models
         [Required]
         public string Name { get; set; }
         [Required]
-        public double Quantity { get; set; }
+        public int Quantity { get; set; }
         [Required]
         public string Unit { get; set; }
         public int RecipeId { get; set; }

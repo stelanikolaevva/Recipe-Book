@@ -30,8 +30,8 @@ namespace RecipeBook.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Quantity")
-                        .HasColumnType("float");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<int>("RecipeId")
                         .HasColumnType("int");
