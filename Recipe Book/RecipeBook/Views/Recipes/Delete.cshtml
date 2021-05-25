@@ -48,11 +48,17 @@
             @Html.DisplayFor(model => model.Image)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RecipeManager)
+            @Html.DisplayNameFor(model => model.Published)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RecipeManager.Id)
-        </dd class>
+            @Html.DisplayFor(model => model.Published)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
     </dl>
     
     <form asp-action="Delete">

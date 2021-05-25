@@ -44,9 +44,14 @@
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RecipeManagerRef" class="control-label"></label>
-                <select asp-for="RecipeManagerRef" class="form-control" asp-items="ViewBag.RecipeManagerRef"></select>
-                <span asp-validation-for="RecipeManagerRef" class="text-danger"></span>
+                <label asp-for="Published" class="control-label"></label>
+                <input asp-for="Published" class="form-control" />
+                <span asp-validation-for="Published" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedBy" class="control-label"></label>
+                <input asp-for="CreatedBy" class="form-control" />
+                <span asp-validation-for="CreatedBy" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

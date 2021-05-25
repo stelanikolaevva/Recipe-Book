@@ -22,8 +22,7 @@ namespace RecipeBook.Controllers
         // GET: Recipes
         public async Task<IActionResult> Index()
         {
-            var recipeBookContext = _context.Recipe.Include(r => r.RecipeManager);
-            return View(await recipeBookContext.ToListAsync());
+            return View(await _context.Recipe.ToListAsync());
         }
 
         // GET: Recipes/Details/5
@@ -35,7 +34,6 @@ namespace RecipeBook.Controllers
             }
 
             var recipe = await _context.Recipe
-                .Include(r => r.RecipeManager)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (recipe == null)
             {
@@ -48,7 +46,6 @@ namespace RecipeBook.Controllers
         // GET: Recipes/Create
         public IActionResult Create()
         {
-            ViewData["RecipeManagerRef"] = new SelectList(_context.RecipeBook, "Id", "Id");
             return View();
         }
 
@@ -57,7 +54,7 @@ namespace RecipeBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Category,Description,CookingTime,Servings,Image,RecipeManagerRef")] Recipe recipe)
+        public async Task<IActionResult> Create([Bind("Id,Name,Category,Description,CookingTime,Servings,Image,Published,CreatedBy")] Recipe recipe)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +62,6 @@ namespace RecipeBook.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RecipeManagerRef"] = new SelectList(_context.RecipeBook, "Id", "Id", recipe.RecipeManagerRef);
             return View(recipe);
         }
 
@@ -82,7 +78,6 @@ namespace RecipeBook.Controllers
             {
                 return NotFound();
             }
-            ViewData["RecipeManagerRef"] = new SelectList(_context.RecipeBook, "Id", "Id", recipe.RecipeManagerRef);
             return View(recipe);
         }
 
@@ -91,7 +86,7 @@ namespace RecipeBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Category,Description,CookingTime,Servings,Image,RecipeManagerRef")] Recipe recipe)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Category,Description,CookingTime,Servings,Image,Published,CreatedBy")] Recipe recipe)
         {
             if (id != recipe.Id)
             {
@@ -118,7 +113,6 @@ namespace RecipeBook.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RecipeManagerRef"] = new SelectList(_context.RecipeBook, "Id", "Id", recipe.RecipeManagerRef);
             return View(recipe);
         }
 
@@ -131,7 +125,6 @@ namespace RecipeBook.Controllers
             }
 
             var recipe = await _context.Recipe
-                .Include(r => r.RecipeManager)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (recipe == null)
             {

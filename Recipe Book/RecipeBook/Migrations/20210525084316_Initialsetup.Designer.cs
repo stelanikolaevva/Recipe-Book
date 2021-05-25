@@ -10,8 +10,8 @@ using RecipeBook.Data;
 namespace RecipeBook.Migrations
 {
     [DbContext(typeof(RecipeBookContext))]
-    [Migration("20210523110115_InitialSetup")]
-    partial class InitialSetup
+    [Migration("20210525084316_Initialsetup")]
+    partial class Initialsetup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -64,6 +64,10 @@ namespace RecipeBook.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -76,33 +80,15 @@ namespace RecipeBook.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RecipeManagerRef")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("Published")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("Servings")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RecipeManagerRef")
-                        .IsUnique();
-
                     b.ToTable("Recipe");
-                });
-
-            modelBuilder.Entity("RecipeBook.Models.RecipeManager", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("Published")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("RecipeBook");
                 });
 
             modelBuilder.Entity("RecipeBook.Models.Steps", b =>
@@ -142,17 +128,6 @@ namespace RecipeBook.Migrations
                     b.Navigation("Recipe");
                 });
 
-            modelBuilder.Entity("RecipeBook.Models.Recipe", b =>
-                {
-                    b.HasOne("RecipeBook.Models.RecipeManager", "RecipeManager")
-                        .WithOne("Recipes")
-                        .HasForeignKey("RecipeBook.Models.Recipe", "RecipeManagerRef")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("RecipeManager");
-                });
-
             modelBuilder.Entity("RecipeBook.Models.Steps", b =>
                 {
                     b.HasOne("RecipeBook.Models.Recipe", "Recipe")
@@ -167,11 +142,6 @@ namespace RecipeBook.Migrations
                     b.Navigation("Ingredients");
 
                     b.Navigation("Steps");
-                });
-
-            modelBuilder.Entity("RecipeBook.Models.RecipeManager", b =>
-                {
-                    b.Navigation("Recipes");
                 });
 #pragma warning restore 612, 618
         }

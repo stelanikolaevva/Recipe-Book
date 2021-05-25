@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using RecipeBook.Models;
-using RecipeBook.Dtos;
 
 namespace RecipeBook.Data
 {
@@ -16,12 +15,6 @@ namespace RecipeBook.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<RecipeManager>()
-                .HasOne(a => a.Recipes)
-                .WithOne(b => b.RecipeManager)
-                .HasForeignKey<Recipe>(b => b.RecipeManagerRef);
-
-
             modelBuilder.Entity<Recipe>()
                 .HasMany(c => c.Steps)
                 .WithOne(e => e.Recipe);
@@ -33,8 +26,6 @@ namespace RecipeBook.Data
         public DbSet<RecipeBook.Models.Ingredients> Ingredients { get; set; }
 
         public DbSet<RecipeBook.Models.Recipe> Recipe { get; set; }
-
-        public DbSet<RecipeBook.Models.RecipeManager> RecipeBook { get; set; }
 
         public DbSet<RecipeBook.Models.Steps> Steps { get; set; }
 

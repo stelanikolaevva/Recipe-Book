@@ -25,11 +25,12 @@ namespace RecipeBook.Models
         public int Servings { get; set; }
         [Required]
         public string Image { get; set; }
-        public   int RecipeManagerRef { get; set; }
-        public virtual RecipeManager RecipeManager { get; set; }
-
+        [Required]
+        public DateTime Published { get; set; }
+        [Required]
+        public string CreatedBy { get; set; }
         public virtual ICollection<Steps> Steps { get; set; }
-
+       
         public virtual ICollection<Ingredients> Ingredients { get; set; }
         public Recipe()
         {
