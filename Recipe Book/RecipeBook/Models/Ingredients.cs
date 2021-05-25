@@ -18,6 +18,7 @@ namespace RecipeBook.Models
         public int Quantity { get; set; }
         [Required]
         public string Unit { get; set; }
+        public int RecipeId { get; set; }
         public virtual Recipe Recipe { get; set; }
         public Ingredients()
         {
