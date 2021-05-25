@@ -11,7 +11,10 @@
 </style>
 <br />
 <h1>Details</h1>
-
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
 <div>
     <h4>Recipe</h4>
     <hr />
@@ -64,7 +67,10 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CreatedBy)
         </dd>
-        <dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Steps)
+        </dt>
+        <dd class="col-sm-10">
             <table class="table">
                 <tr>
                     <th>Steps</th>
@@ -84,7 +90,10 @@
                 }
             </table>
         </dd>
-        <dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ingredients)
+        </dt>
+        <dd class="col-sm-10">
             <table class="table">
                 <tr>
                     <th>Name</th>
@@ -109,7 +118,4 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
