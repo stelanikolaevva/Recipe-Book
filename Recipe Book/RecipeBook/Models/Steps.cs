@@ -17,7 +17,7 @@ namespace RecipeBook.Models
         public string Number { get; set; }
         [Required]
         public string Description { get; set; }
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
         [Required]
         [DisplayName("For Recipe")]
         public int RecipeId { get; set; }

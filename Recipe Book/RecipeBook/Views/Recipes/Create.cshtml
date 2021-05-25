@@ -3,7 +3,13 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+<style>
+    body {
+        background-image: url('https://scontent.fsof9-1.fna.fbcdn.net/v/t1.15752-9/186141382_462260254872690_6777040315924265316_n.png?_nc_cat=104&ccb=1-3&_nc_sid=ae9488&_nc_ohc=IBDZqebWLqIAX8nbUsJ&_nc_ht=scontent.fsof9-1.fna&oh=34c765094b35fb862cb1379f6091eb79&oe=60D3269F');
+        background-size: 100% 100%;
+    }
+</style>
+<br />
 <h1>Create</h1>
 
 <h4>Recipe</h4>
@@ -41,6 +47,11 @@
                 <label asp-for="Image" class="control-label"></label>
                 <input asp-for="Image" class="form-control" />
                 <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Published" class="control-label"></label>
+                <input asp-for="Published" class="form-control" />
+                <span asp-validation-for="Published" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CreatedBy" class="control-label"></label>

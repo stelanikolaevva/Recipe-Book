@@ -18,7 +18,7 @@ namespace RecipeBook.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CookingTime = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Servings = table.Column<int>(type: "int", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     Published = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -57,7 +57,7 @@ namespace RecipeBook.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Number = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     RecipeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>

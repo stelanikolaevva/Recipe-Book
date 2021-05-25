@@ -25,8 +25,7 @@ namespace RecipeBook.Models
         public string CookingTime { get; set; }
         [Required]
         public int Servings { get; set; }
-        [Required]
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
         [Required]
         public DateTime Published { get; set; }
         [Required]

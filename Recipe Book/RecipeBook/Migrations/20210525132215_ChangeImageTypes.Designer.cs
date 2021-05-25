@@ -10,8 +10,8 @@ using RecipeBook.Data;
 namespace RecipeBook.Migrations
 {
     [DbContext(typeof(RecipeBookContext))]
-    [Migration("20210525110147_ChangeRecipeDisplayName")]
-    partial class ChangeRecipeDisplayName
+    [Migration("20210525132215_ChangeImageTypes")]
+    partial class ChangeImageTypes
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,9 +72,8 @@ namespace RecipeBook.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -102,8 +101,8 @@ namespace RecipeBook.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Number")
                         .IsRequired()

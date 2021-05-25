@@ -34,7 +34,7 @@ namespace RecipeBook.Controllers
             }
 
             var recipe = await _context.Recipe
-                .Include(x=>x.Steps)
+                .Include(x => x.Steps)
                 .Include(x => x.Ingredients)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (recipe == null)
