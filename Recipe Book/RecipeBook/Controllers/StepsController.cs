@@ -48,7 +48,7 @@ namespace RecipeBook.Controllers
         // GET: Steps/Create
         public IActionResult Create()
         {
-            ViewData["RecipeId"] = new SelectList(_context.Recipe, "Id", "Category");
+            ViewData["RecipeId"] = new SelectList(_context.Recipe, "Id", "Name");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace RecipeBook.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RecipeId"] = new SelectList(_context.Recipe, "Id", "Category", steps.RecipeId);
+            ViewData["RecipeId"] = new SelectList(_context.Recipe, "Id", "Name", steps.RecipeId);
             return View(steps);
         }
 
@@ -82,7 +82,7 @@ namespace RecipeBook.Controllers
             {
                 return NotFound();
             }
-            ViewData["RecipeId"] = new SelectList(_context.Recipe, "Id", "Category", steps.RecipeId);
+            ViewData["RecipeId"] = new SelectList(_context.Recipe, "Id", "Name", steps.RecipeId);
             return View(steps);
         }
 
@@ -118,7 +118,7 @@ namespace RecipeBook.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RecipeId"] = new SelectList(_context.Recipe, "Id", "Category", steps.RecipeId);
+            ViewData["RecipeId"] = new SelectList(_context.Recipe, "Id", "Name", steps.RecipeId);
             return View(steps);
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -16,8 +17,9 @@ namespace RecipeBook.Models
         public string Number { get; set; }
         [Required]
         public string Description { get; set; }
-        [Required]
         public string Image { get; set; }
+        [Required]
+        [DisplayName("For Recipe")]
         public int RecipeId { get; set; }
         public virtual Recipe Recipe { get; set; }
         public Steps()
