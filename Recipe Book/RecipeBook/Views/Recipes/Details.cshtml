@@ -12,7 +12,7 @@
 <br />
 <h1>Details</h1>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="text-warning"><i class="fa fa-marker fa-lg"></i></a> |
     <a asp-action="Index"><img src="https://media.discordapp.net/attachments/822377148144812042/846869808740827206/60577.png"
      width=30 height="20"></a>
 </div>
@@ -51,10 +51,10 @@
             @Html.DisplayFor(model => model.Servings)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
+            Uploaded Image
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Image)
+            <img src="@("~/image/"+Model.ImageName)" asp-append-version="true" width="250px" height="250px" />
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Published)

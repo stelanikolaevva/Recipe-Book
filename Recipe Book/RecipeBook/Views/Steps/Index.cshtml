@@ -1,49 +1,14 @@
 ﻿@model IEnumerable<RecipeBook.Models.Steps>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 @{
     ViewData["Title"] = "Index";
 }
+<link rel="stylesheet" href="~/css/tables.css" />
 <style>
     body {
         background-image: url('https://scontent.fsof9-1.fna.fbcdn.net/v/t1.15752-9/186141382_462260254872690_6777040315924265316_n.png?_nc_cat=104&ccb=1-3&_nc_sid=ae9488&_nc_ohc=IBDZqebWLqIAX8nbUsJ&_nc_ht=scontent.fsof9-1.fna&oh=34c765094b35fb862cb1379f6091eb79&oe=60D3269F');
         background-size: 100% 100%;
     }
-    .table {
-        border-collapse: collapse;
-        margin: 25px 0;
-        font-size: 0.9em;
-        font-family: sans-serif;
-        min-width: 400px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    }
-
-        .table thead tr {
-            background-color: #009879;
-            color: #ffffff;
-            text-align: left;
-        }
-
-        .table th,
-        .table td {
-            padding: 12px 15px;
-        }
-
-        .table tbody tr {
-            border-bottom: 1px solid #dddddd;
-        }
-
-            .table tbody tr:nth-of-type(even) {
-                background-color: #f3f3f3;
-            }
-
-            .table tbody tr:last-of-type {
-                border-bottom: 2px solid #009879;
-            }
-
-            .table tbody tr.active-row {
-                font-weight: bold;
-                color: #009879;
-            }
 </style>
 <br />
 <h1>All Steps</h1>
@@ -59,12 +24,12 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Image)
+                @Html.DisplayNameFor(model => model.ImageName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Recipe)
             </th>
-            <th><a asp-action="Create" class="btn btn-outline-success"><i class="far fa-plus-squarq"></i>Step</a></th>
+            <th><a asp-action="Create" class="btn btn-outline-success"><i class="far fa-plus-square"></i>Step</a></th>
         </tr>
     </thead>
     <tbody>
@@ -78,13 +43,14 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Image)
+                    @Html.DisplayFor(modelItem => item.ImageName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Recipe.Category)
+                    @Html.DisplayFor(modelItem => item.Recipe.Name)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-marker fa-lg"></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="text-warning"><i class="fa fa-info fa-lg"></i></a> |
                     <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger ml-1"><i class="fa fa-trash-alt fa-lg"></i></a>
                 </td>
             </tr>

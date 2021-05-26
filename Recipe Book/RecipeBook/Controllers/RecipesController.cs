@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +15,12 @@ namespace RecipeBook.Controllers
     public class RecipesController : Controller
     {
         private readonly RecipeBookContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public RecipesController(RecipeBookContext context)
+        public RecipesController(RecipeBookContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            _hostEnvironment = hostEnvironment;
         }
 
         // GET: Recipes
@@ -66,7 +70,18 @@ namespace RecipeBook.Controllers
         public async Task<IActionResult> Create([Bind("Id,Name,Category,Description,CookingTime,Servings,Image,Published,CreatedBy")] Recipe recipe)
         {
             if (ModelState.IsValid)
-            {
+            {//Save img to wwwroot/image
+                string wwwRootPath = _hostEnvironment.WebRootPath;
+                string fileName = Path.GetFileNameWithoutExtension(recipe.Image.FileName);
+                string extension = Path.GetExtension(recipe.Image.FileName);
+                fileName = fileName + DateTime.Now.ToString("yymmssff") + extension;
+                recipe.ImageName = fileName;
+                string path = Path.Combine(wwwRootPath + "/Image/", fileName);
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    await recipe.Image.CopyToAsync(fileStream);
+                }
+
                 recipe.Published = DateTime.Now;
                 _context.Add(recipe);
                 await _context.SaveChangesAsync();
@@ -150,6 +165,12 @@ namespace RecipeBook.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var recipe = await _context.Recipe.FindAsync(id);
+            //delete image from wwwroot/image
+            var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "image", recipe.ImageName);
+            if (System.IO.File.Exists(imagePath))
+            {
+                System.IO.File.Delete(imagePath);
+            }
             _context.Recipe.Remove(recipe);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
