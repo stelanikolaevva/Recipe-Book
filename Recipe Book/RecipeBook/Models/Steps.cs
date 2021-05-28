@@ -15,6 +15,7 @@ namespace RecipeBook.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
+        [DisplayName("Step")]
         public string Number { get; set; }
         [Required]
         public string Description { get; set; }
@@ -25,9 +26,6 @@ namespace RecipeBook.Models
         public string ImageName { get; set; }
         [NotMapped]
         public IFormFile Image { get; set; }
-        public Steps()
-        {
 
-        }
     }
 }

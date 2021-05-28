@@ -475,11 +475,6 @@ E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\Rec
 E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.Views.pdb
 E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.csproj.CopyComplete
 E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.genruntimeconfig.cache
-E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Ingredients\Create.cshtml.g.cs
-E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Ingredients\Delete.cshtml.g.cs
-E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Ingredients\Details.cshtml.g.cs
-E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Ingredients\Edit.cshtml.g.cs
-E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Ingredients\Index.cshtml.g.cs
 E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Steps\Create.cshtml.g.cs
 E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Steps\Delete.cshtml.g.cs
 E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Steps\Details.cshtml.g.cs
@@ -650,3 +645,13 @@ D:\USP Repo Folder\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBoo
 D:\USP Repo Folder\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\ref\RecipeBook.dll
 D:\USP Repo Folder\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.pdb
 D:\USP Repo Folder\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\RecipeBook.genruntimeconfig.cache
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\RecipeIngredients\Create.cshtml.g.cs
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\RecipeIngredients\Delete.cshtml.g.cs
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\RecipeIngredients\Details.cshtml.g.cs
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\RecipeIngredients\Edit.cshtml.g.cs
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\RecipeIngredients\Index.cshtml.g.cs
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Ingredients\Create.cshtml.g.cs
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Ingredients\Delete.cshtml.g.cs
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Ingredients\Details.cshtml.g.cs
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Ingredients\Edit.cshtml.g.cs
+E:\3 курс\6 семестър\УСП-проект\Recipe-Book\Recipe Book\RecipeBook\obj\Debug\net5.0\Razor\Views\Ingredients\Index.cshtml.g.cs

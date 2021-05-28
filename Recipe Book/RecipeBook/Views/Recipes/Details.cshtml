@@ -1,4 +1,5 @@
 ﻿@model RecipeBook.Models.Recipe
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 
 @{
     ViewData["Title"] = "Details";
@@ -10,15 +11,17 @@
     }
 </style>
 <br />
-<h1>Details</h1>
+<h1>Details for a recipe</h1>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="text-warning"><i class="fa fa-marker fa-lg"></i></a> |
-    <a asp-action="Index"><img src="https://media.discordapp.net/attachments/822377148144812042/846869808740827206/60577.png"
-     width=30 height="20"></a>
+    <a asp-action="Edit" asp-route-id="@Model.Id"><i class="fa fa-marker fa-lg"></i></a> |
+    <a asp-action="Index">
+        <img src="https://media.discordapp.net/attachments/822377148144812042/846869808740827206/60577.png"
+             width=30 height="20">
+    </a>
 </div>
+<hr />
 <div>
-    <h4>Recipe</h4>
-    <hr />
+
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
@@ -51,10 +54,10 @@
             @Html.DisplayFor(model => model.Servings)
         </dd>
         <dt class="col-sm-2">
-            Uploaded Image
+            Photo
         </dt>
         <dd class="col-sm-10">
-            <img src="@("~/image/"+Model.ImageName)" asp-append-version="true" width="250px" height="250px" />
+            <img src="@("~/image/"+Model.ImageName)" asp-append-version="true" width="300" height="200" alt="img" />
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Published)
@@ -87,12 +90,16 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Description)
                         </td>
+                        <td>
+                            <img src="@("~/image/"+item.ImageName)" asp-append-version="true" width="100" height="100" />
+
+                        </td>
                     </tr>
                 }
             </table>
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Ingredients)
+            Ingredients
         </dt>
         <dd class="col-sm-10">
             <table class="table">
@@ -101,11 +108,11 @@
                     <th>Quantity</th>
                     <th>Unit</th>
                 </tr>
-                @foreach (var item in Model.Ingredients)
+                @foreach (var item in Model.RecipeIngredients)
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Name)
+                            @Html.DisplayFor(modelItem => item.Ingredients.Name)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Quantity)

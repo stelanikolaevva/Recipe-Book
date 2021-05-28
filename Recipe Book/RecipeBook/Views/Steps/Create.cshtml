@@ -10,9 +10,14 @@
     }
 </style>
 <br />
-<h1>Create</h1>
+<h1> Create step</h1>
+<div>
+    <a asp-action="Index">
+        <img src="https://media.discordapp.net/attachments/822377148144812042/846869808740827206/60577.png"
+             width=30 height="20">
+    </a>
+</div>
 
-<h4>Steps</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -44,10 +49,6 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index"><img src="https://media.discordapp.net/attachments/822377148144812042/846869808740827206/60577.png"
-     width=30 height="20"></a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

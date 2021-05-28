@@ -14,18 +14,8 @@ namespace RecipeBook.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
+        [Display(Name = "Ingredient")]
         public string Name { get; set; }
-        [Required]
-        public int Quantity { get; set; }
-        [Required]
-        public string Unit { get; set; }
-        [Required]
-        [DisplayName("For Recipe")]
-        public int RecipeId { get; set; }
-        public virtual Recipe Recipe { get; set; }
-        public Ingredients()
-        {
-
-        }
+        public virtual ICollection<RecipeIngredients> RecipeIngredients { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿@model RecipeBook.Models.Ingredients
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 
 @{
     ViewData["Title"] = "Details";
@@ -10,11 +11,14 @@
     }
 </style>
 <br />
-<h1>Details</h1>
-
+<h1>Detail for ingredient</h1>
+<a asp-action="Edit" asp-route-id="@Model.Id"><i class="fa fa-marker fa-lg"></i></a> |
+<a asp-action="Index">
+    <img src="https://media.discordapp.net/attachments/822377148144812042/846869808740827206/60577.png"
+         width=30 height="20">
+</a>
+<hr />
 <div>
-    <h4>Ingredients</h4>
-    <hr />
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
@@ -22,28 +26,5 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Unit)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Unit)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Recipe)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Recipe.Name)
-        </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index"><img src="https://media.discordapp.net/attachments/822377148144812042/846869808740827206/60577.png"
-     width=30 height="20"></a>
 </div>

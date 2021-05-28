@@ -30,21 +30,9 @@ namespace RecipeBook.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RecipeId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Unit")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("RecipeId");
-
-                    b.ToTable("Ingredients");
+                    b.ToTable("tblIngredient");
                 });
 
             modelBuilder.Entity("RecipeBook.Models.Recipe", b =>
@@ -85,7 +73,35 @@ namespace RecipeBook.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Recipe");
+                    b.ToTable("tblRecipe");
+                });
+
+            modelBuilder.Entity("RecipeBook.Models.RecipeIngredients", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("IngredientsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RecipesId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Unit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IngredientsId");
+
+                    b.HasIndex("RecipesId");
+
+                    b.ToTable("tblRecipeIngredients");
                 });
 
             modelBuilder.Entity("RecipeBook.Models.Steps", b =>
@@ -116,15 +132,23 @@ namespace RecipeBook.Migrations
                     b.ToTable("Steps");
                 });
 
-            modelBuilder.Entity("RecipeBook.Models.Ingredients", b =>
+            modelBuilder.Entity("RecipeBook.Models.RecipeIngredients", b =>
                 {
-                    b.HasOne("RecipeBook.Models.Recipe", "Recipe")
-                        .WithMany("Ingredients")
-                        .HasForeignKey("RecipeId")
+                    b.HasOne("RecipeBook.Models.Ingredients", "Ingredients")
+                        .WithMany("RecipeIngredients")
+                        .HasForeignKey("IngredientsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Recipe");
+                    b.HasOne("RecipeBook.Models.Recipe", "Recipes")
+                        .WithMany("RecipeIngredients")
+                        .HasForeignKey("RecipesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ingredients");
+
+                    b.Navigation("Recipes");
                 });
 
             modelBuilder.Entity("RecipeBook.Models.Steps", b =>
@@ -138,9 +162,14 @@ namespace RecipeBook.Migrations
                     b.Navigation("Recipe");
                 });
 
+            modelBuilder.Entity("RecipeBook.Models.Ingredients", b =>
+                {
+                    b.Navigation("RecipeIngredients");
+                });
+
             modelBuilder.Entity("RecipeBook.Models.Recipe", b =>
                 {
-                    b.Navigation("Ingredients");
+                    b.Navigation("RecipeIngredients");
 
                     b.Navigation("Steps");
                 });

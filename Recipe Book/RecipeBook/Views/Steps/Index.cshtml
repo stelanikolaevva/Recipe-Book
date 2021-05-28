@@ -11,8 +11,8 @@
     }
 </style>
 <br />
-<h1>All Steps</h1>
-
+<h1>All steps</h1>
+<hr />
 
 <table class="table" border="1">
     <thead>
@@ -22,9 +22,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Recipe)
@@ -41,9 +38,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ImageName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Recipe.Name)

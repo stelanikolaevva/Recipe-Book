@@ -27,19 +27,17 @@ namespace RecipeBook.Models
         [Required]
         public int Servings { get; set; }
         [Required]
+        [Display(Name = "Published on")]
         public DateTime Published { get; set; }
         [Required]
         [DisplayName("Created by")]
         public string CreatedBy { get; set; }
         public virtual ICollection<Steps> Steps { get; set; }
        
-        public virtual ICollection<Ingredients> Ingredients { get; set; }
+        public virtual ICollection<RecipeIngredients> RecipeIngredients { get; set; }
         public string ImageName { get; set; }
         [NotMapped]
         public IFormFile Image { get; set; }
-        public Recipe()
-        {
 
-        }
     }
 }

@@ -19,15 +19,17 @@ namespace RecipeBook.Data
                 .HasMany(c => c.Steps)
                 .WithOne(e => e.Recipe);
 
-            modelBuilder.Entity<Recipe>()
-               .HasMany(c => c.Ingredients)
-               .WithOne(e => e.Recipe);
+            modelBuilder.Entity<Recipe>().ToTable("tblRecipe");
+            modelBuilder.Entity<Ingredients>().ToTable("tblIngredient");
+            modelBuilder.Entity<RecipeIngredients>().ToTable("tblRecipeIngredients");
         }
         public DbSet<RecipeBook.Models.Ingredients> Ingredients { get; set; }
 
         public DbSet<RecipeBook.Models.Recipe> Recipe { get; set; }
 
         public DbSet<RecipeBook.Models.Steps> Steps { get; set; }
+
+        public DbSet<RecipeBook.Models.RecipeIngredients> RecipeIngredients { get; set; }
 
     }
 }
